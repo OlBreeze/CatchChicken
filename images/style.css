@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.box{
+    width: 600px;
+    height: 600px;
+    margin: 50px auto;
+    border: 2px solid blue;
+    position: relative;
+}
+
+.sun img{
+    width: 250px;
+    height: 250px;
+}
+
+.sun{
+    position: absolute;
+    margin: calc((600px - 250px)/2);
+    /*border: 1px solid coral;*/
+}
+
+.he, .she, .target, .sun{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    animation-duration: 15s;
+    /*animation-delay: 1s;*/
+    animation-iteration-count: infinite;
+}
+
+.she{
+    width: 120px;
+}
+
+.sun{
+    animation-name: movingSun;
+}
+
+.he, .she{
+    animation-name: moving;
+}
+
+.he {
+    animation-delay: 3s;
+}
+
+.target{
+    animation-name: movingStraight;
+    animation-delay: 3.5s;
+}
+
+.he, .she, .sun, .target:hover{
+    animation-play-state: running;
+}
+
+@keyframes movingSun {
+    40%
+    {
+        transform: rotate(20deg);
+    }
+    80%
+    {
+        transform: rotate(-20deg);
+    }
+}
+
+@keyframes moving {
+    0%
+    {
+        top: 0;
+        left: 0;
+    }
+    25%
+    {
+        top: 445px;
+        left: 0;
+        transform: scaleX(-1);
+    }
+
+    50%
+    {
+        top: 445px;
+        left: 445px;
+    }
+
+    75%
+    {
+        top: 0;
+        left: 445px;
+        transform: scaleX(-1);
+    }
+    100%{
+        top: 0;
+        left: 0;
+    }
+}
+
+@keyframes movingStraight{
+    0%
+    {
+        top: 0;
+        left: 0;
+    }
+    25%
+    {
+        top: 445px;
+        left: 0;
+        transform: scale(1.4);
+    }
+
+    50%
+    {
+        top: 445px;
+        left: 445px;
+        transform: rotate(150deg);
+    }
+
+    75%
+    {
+        top: 0;
+        left: 445px;
+        transform: rotate(350deg);
+    }
+
+    100%{
+        top: 0;
+        left: 0;
+    }
+}
